@@ -1,0 +1,1 @@
+print(sum(sorted([sum([int(s) for s in a]) for a in [x.split("\n") for x in open("1/input.txt", "r").read().split("\n\n")]], reverse = True)[0:3]))
