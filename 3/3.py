@@ -1,0 +1,3 @@
+input = [x.strip() for x in open("3/input.txt", "r")]
+print("First part:", sum([ord(letter) - ord("a") + 1 if ord(letter)>=ord("a") else ord(letter) - ord("A") + 27 for letter in [set(line[:len(line)//2]).intersection(set(line[len(line)//2:])).pop() for line in input]]))
+print("Second part:", sum([ord(letter) - ord("a") + 1 if ord(letter)>=ord("a") else ord(letter) - ord("A") + 27 for letter in [set(line).intersection(set(input[i*3+1])).intersection(set(input[i*3+2])).pop() for i, line in enumerate(input[::3])]]))
